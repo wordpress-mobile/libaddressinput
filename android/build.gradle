@@ -16,11 +16,11 @@
 
 buildscript {
     repositories {
-        mavenCentral()
-        mavenLocal()
+        jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 
@@ -31,10 +31,12 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compile project(':common')
-    compile 'com.google.android.gms:play-services-location:10.0.0'
-    compile 'com.google.android.gms:play-services-places:9.2.0'
-    compile 'com.android.support:design:26.1.0'
+    implementation project(':common')
+    implementation 'com.google.android.gms:play-services-location:11.8.0'
+    implementation 'com.google.android.gms:play-services-places:11.8.0'
+    implementation 'com.android.support:design:26.1.0'
+    
+  	androidTestImplementation 'org.mockito:mockito-core:1.9.5'
 }
 
 android {
@@ -57,11 +59,14 @@ android {
      * The obvious way to fix this would be allow wildcards (ie, "22.+") but
      * Android have explicitly said that they won't do this.
      */
-    compileSdkVersion 22
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     defaultConfig {
       minSdkVersion 17
-      targetSdkVersion 22
+      targetSdkVersion 26
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 

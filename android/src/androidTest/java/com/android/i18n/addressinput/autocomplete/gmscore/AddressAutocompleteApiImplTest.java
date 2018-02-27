@@ -81,7 +81,7 @@ public class AddressAutocompleteApiImplTest extends ActivityInstrumentationTestC
     Future<List<? extends AddressAutocompletePrediction>> actualPredictions =
         getAutocompleteSuggestions();
 
-    List<AddressAutocompletePrediction> expectedPredictions =
+    List<AddressAutocompletePredictionImpl> expectedPredictions =
         Lists.newArrayList(new AddressAutocompletePredictionImpl(autocompletePrediction));
 
     assertEquals(actualPredictions.get(), expectedPredictions);
@@ -95,7 +95,7 @@ public class AddressAutocompleteApiImplTest extends ActivityInstrumentationTestC
     Future<List<? extends AddressAutocompletePrediction>> actualPredictions =
         getAutocompleteSuggestions();
 
-    List<AddressAutocompletePrediction> expectedPredictions =
+    List<AddressAutocompletePredictionImpl> expectedPredictions =
         Lists.newArrayList(new AddressAutocompletePredictionImpl(autocompletePrediction));
 
     assertEquals(actualPredictions.get(), expectedPredictions);
@@ -126,7 +126,7 @@ public class AddressAutocompleteApiImplTest extends ActivityInstrumentationTestC
     when(autocompletePrediction.getPrimaryText(null)).thenReturn("TEST_PRIMARY_ID");
     when(autocompletePrediction.getSecondaryText(null)).thenReturn("TEST_SECONDARY_ID");
 
-    SettableFuture<List<? extends AddressAutocompletePrediction>> actualPredictions =
+	final SettableFuture<List<? extends AddressAutocompletePrediction>> actualPredictions =
         SettableFuture.create();
     addressAutocompleteApi.getAutocompletePredictions(
         TEST_QUERY,
