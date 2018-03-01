@@ -1,6 +1,4 @@
- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
- 
- <a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [ ![Download](https://api.bintray.com/packages/wordpress-mobile/maven/libaddressinput%3Acommon/images/download.svg) ](https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon/_latestVersion)
 
 # libaddressinput:common
 
