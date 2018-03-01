@@ -74,7 +74,7 @@ publish {
     groupId = 'org.wordpress'
     uploadName = 'libaddressinput:common'
     description = 'Assists application developers in handling postal addresses from all over the world.'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     licences = ['Apache-2.0']
     website = 'https://github.com/wordpress-mobile/libaddressinput/'
     dryRun = 'true'

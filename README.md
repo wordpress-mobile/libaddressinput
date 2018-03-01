@@ -1,4 +1,8 @@
-# libaddressinput:common [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a><a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+ 
+ <a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+
+# libaddressinput:common
 
 Provides offline address localization and formatting for shipping and billing labels.
 
