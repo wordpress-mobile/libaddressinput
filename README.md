@@ -1,39 +1,54 @@
-# ![](https://github.com/googlei18n/libaddressinput/wiki/libaddressinput-icon-70x55.png) libaddressinput
+# libaddressinput:common [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a><a href='https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon?source=watch' alt='Get automatic notifications about new "libaddressinput:common" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
 
-[![Build Status](https://travis-ci.org/googlei18n/libaddressinput.svg?branch=master)](https://travis-ci.org/googlei18n/libaddressinput)
+Provides offline address localization and formatting for shipping and billing labels.
 
-The _libaddressinput_ project consists of two different libraries (one
-implemented in C++, one implemented in Java for Android) that use
-[address metadata](https://github.com/googlei18n/libaddressinput/wiki/AddressValidationMetadata)
-from
-[Google](https://developers.google.com/)'s
-[Address Data Service](https://chromium-i18n.appspot.com/ssl-address/data)
-to assist application developers in collecting and handling _postal addresses_
-from all over the world.
+**Features:**
+* Address formats for 200 countries
+* Postal formatting
+* Data provided by Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address)
 
-These libraries can provide information about what input fields are required for
-a correct address input form for any country in the world and can validate an
-address to highlight input errors like missing required fields or invalid
-values.
+**Changes from Original Forked Repo:**
 
-## C++
+This libary is a subset of Google's [libaddressinput](https://github.com/googlei18n/libaddressinput) project. The unused Android module was stripped out due to it being severely outdated and mostly useless. The C++ modules were stripped out because they exist specifically for chromium and wont work for android.
 
-The C++ library (in very portable C++11) of _libaddressinput_ is used in address-related
-projects in [Chromium](http://www.chromium.org/Home).
+**Important Considerations**
 
-https://chromium.googlesource.com/chromium/src/+/master/third_party/libaddressinput/
+At this time, the data used for address formatting is statically included in the library and will need to be updated manually. The repo this was forked from typically get's a refresh of that data every few months. 
 
-## Java
+We may want to someday write a script that builds this data mapping in a nightly job instead of relying on periodic manual updates. 
 
-The Java library of _libaddressinput_ is written for use in
-[Android](https://developer.android.com/) and includes an Android UI address
-input widget ready for use, but only the UI parts are tied to Android.
+## Use the library in your project
 
-Non-UI code and tests can be run in Java SE, and the rest of the library could
-easily be adapted to run in any Java environment.
+* In your build.gradle:
+```groovy
+dependencies {
+    implementation 'org.wordpress:libaddressinput.common:0.0.1'
+}
+```
 
-## Mailing List
+## Publish an updated version to your local maven repository
 
-Using and developing libaddressinput is discussed on this mailing list:
+You can bump the [version name in the main build file: `common/build.gradle`][1]. After updating the build file, you can build, and publish the library to your local maven repo. That will let you try the new version in your app for example.
 
-https://groups.google.com/forum/#!forum/libaddressinput-discuss
+```shell
+$ ./gradlew assemble test publishToMavenLocal
+```
+
+## Publish it to Bintray
+
+When a new version is ready to be published to the remote repository, use the following command to upload it to Bintray:
+
+```shell
+$ ./gradlew assemble test bintrayUpload -PbintrayUser=FIXME -PbintrayKey=FIXME -PdryRun=false
+```
+
+## Apps and libraries using libaddressinput:common
+
+- [woocommerce-android][2]
+
+## License
+
+[Apache 2.0 license](LICENSE)
+
+[1]: https://github.com/wordpress-mobile/libaddressinput/blob/master/common/build.gradle#L77
+[2]: https://github.com/woocommerce/woocommerce-android
