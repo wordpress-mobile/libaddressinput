@@ -13,10 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/*
- * Root Gradle file for Java address input widget (under "common" and "android")
- */
 allprojects {
   repositories {
     google()
