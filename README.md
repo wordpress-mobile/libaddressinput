@@ -15,7 +15,7 @@ This libary is a subset of Google's [libaddressinput](https://github.com/googlei
 
 **Important Considerations**
 
-At this time, the data used for address formatting is statically included in the library and will need to be updated manually. The repo this was forked from typically get's a refresh of that data every few months. 
+At this time, the data used for address formatting is statically included in the library and will need to be updated manually. The repo this was forked from typically gets a refresh of that data every few months. 
 
 We may want to someday write a script that builds this data mapping in a nightly job instead of relying on periodic manual updates. 
 
@@ -44,13 +44,8 @@ When a new version is ready to be published to the remote repository, use the fo
 $ ./gradlew assemble test bintrayUpload -PbintrayUser=FIXME -PbintrayKey=FIXME -PdryRun=false
 ```
 
-## Apps and libraries using libaddressinput:common
-
-- [woocommerce-android][2]
-
 ## License
 
 [Apache 2.0 license](LICENSE)
 
 [1]: https://github.com/wordpress-mobile/libaddressinput/blob/master/common/build.gradle#L77
-[2]: https://github.com/woocommerce/woocommerce-android
