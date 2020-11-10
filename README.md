@@ -48,4 +48,4 @@ $ ./gradlew assemble test bintrayUpload -PbintrayUser=FIXME -PbintrayKey=FIXME -
 
 [Apache 2.0 license](LICENSE)
 
-[1]: https://github.com/wordpress-mobile/libaddressinput/blob/master/common/build.gradle#L77
+[1]: https://github.com/wordpress-mobile/libaddressinput/blob/trunk/common/build.gradle#L77
