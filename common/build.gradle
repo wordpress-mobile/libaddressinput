@@ -21,13 +21,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.novoda:bintray-release:0.8.0'
     }
 }
 
 
 apply plugin: 'java-library'
-apply plugin: com.novoda.gradle.release.ReleasePlugin
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -66,18 +64,5 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   testImplementation 'com.google.truth:truth:0.39'
   testImplementation 'org.mockito:mockito-core:1.9.5'
-}
-
-publish {
-    artifactId = 'libaddressinput.common'
-    userOrg = 'wordpress-mobile'
-    groupId = 'org.wordpress'
-    uploadName = 'libaddressinput:common'
-    description = 'Assists application developers in handling postal addresses from all over the world.'
-    publishVersion = '0.0.2'
-    licences = ['Apache-2.0']
-    website = 'https://github.com/wordpress-mobile/libaddressinput/'
-    dryRun = 'true'
-    autoPublish = 'false'
 }
 
