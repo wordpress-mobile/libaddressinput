@@ -18,14 +18,17 @@ buildscript {
     repositories {
         jcenter()
         google()
+        maven { url 'https://a8c-libs.s3.amazonaws.com/android' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.automattic.android:publish-to-s3:0.2.2'
     }
 }
 
 
 apply plugin: 'java-library'
+apply plugin: 'com.automattic.android.publish-to-s3'
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -64,5 +67,11 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   testImplementation 'com.google.truth:truth:0.39'
   testImplementation 'org.mockito:mockito-core:1.9.5'
+}
+
+s3PublishPlugin {
+    groupId = 'org.wordpress'
+    artifactId = 'libaddressinput.common'
+    from "java"
 }
 
