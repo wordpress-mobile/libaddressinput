@@ -18,16 +18,17 @@ buildscript {
     repositories {
         jcenter()
         google()
+        maven { url 'https://a8c-libs.s3.amazonaws.com/android' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.novoda:bintray-release:0.8.0'
+        classpath 'com.automattic.android:publish-to-s3:0.2.2'
     }
 }
 
 
 apply plugin: 'java-library'
-apply plugin: com.novoda.gradle.release.ReleasePlugin
+apply plugin: 'com.automattic.android.publish-to-s3'
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -59,7 +60,7 @@ test {
 }
 
 dependencies {
-  compile 'com.google.guava:guava-gwt:18.0'
+  implementation 'com.google.guava:guava-gwt:18.0'
   /* Note that gradle will warn about this not being the same version as *
    * the Android JSON library (but will not compile if it's removed).    */
   implementation 'org.json:json:20180130'
@@ -68,16 +69,9 @@ dependencies {
   testImplementation 'org.mockito:mockito-core:1.9.5'
 }
 
-publish {
-    artifactId = 'libaddressinput.common'
-    userOrg = 'wordpress-mobile'
+s3PublishPlugin {
     groupId = 'org.wordpress'
-    uploadName = 'libaddressinput:common'
-    description = 'Assists application developers in handling postal addresses from all over the world.'
-    publishVersion = '0.0.2'
-    licences = ['Apache-2.0']
-    website = 'https://github.com/wordpress-mobile/libaddressinput/'
-    dryRun = 'true'
-    autoPublish = 'false'
+    artifactId = 'libaddressinput.common'
+    from "java"
 }
 
