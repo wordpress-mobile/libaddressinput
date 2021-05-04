@@ -1,4 +1,4 @@
- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [ ![Download](https://api.bintray.com/packages/wordpress-mobile/maven/libaddressinput%3Acommon/images/download.svg) ](https://bintray.com/wordpress-mobile/maven/libaddressinput%3Acommon/_latestVersion)
+ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # libaddressinput:common
 
@@ -33,7 +33,7 @@ dependencies {
 
 ## Publish it to S3
 
-When a new version is ready to be published to the remote repository, use the following command to upload it to Bintray:
+When a new version is ready to be published to the remote repository, use the following command to upload it to S3:
 
 ```shell
 $ ./gradlew publishToS3 --tag-name={$VERSION}
